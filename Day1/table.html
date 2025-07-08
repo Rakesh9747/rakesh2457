@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>tables</title>
+    <script>
+        function printtable(){
+            var num=parseInt(document.getElementById("number").value);
+            var i=0;
+            for(i=0;i<=10;i++){
+                document.write(num+"x"+i+"="+num*i+"<br>");
+            document.write("<br>");
+            }
+
+        }
+
+    </script>
+    <title>table</title>
 </head>
 <body>
-    <table border="5">
-        <tr>
-            <td>name</td>
-            <td>sub1</td>
-            <td>sub2</td>
-        </tr>
-        <tr>
-            <td>rakesh</td>
-            <td>90</td>
-            <td>80</td>
-        </tr>
-        <tr>
-            <td>suresh</td>
-            <td>80</td>
-            <td>70</td>
-        </tr>
-    </table>
+    <p>enter a number: <input id="number" ></p>
+
+    <button onclick="printtable()">print table:</button>
+
     
 </body>
 </html>
