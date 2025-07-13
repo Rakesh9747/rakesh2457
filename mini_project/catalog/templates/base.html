@@ -1,0 +1,129 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>E-commers site</title>
+    <style>
+        body { font-family: Arial, sans-serif;
+                background-color: rgb(81, 201, 231);
+        }
+        img { 
+            max-width: 150px; 
+        }
+        .product {
+             border: 1px solid #ccc;
+              padding: 10px;
+               margin: 10px;
+                display: inline-block; }
+
+        .logo{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            gap: 15px;
+            padding: 10px;
+        }
+        .logo img{
+            align-items: flex-start;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+        }
+        .Search{
+            display: flex;
+            flex-direction: row;
+            float: right;
+
+
+
+        }
+        .Search input{
+            width: 350px;
+            height: 30px;
+
+        }
+        .Search button{
+            width: 100px;
+            height: 30px;
+        }
+        
+        .navbar {
+            background-color: #08b1ee;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .navbar a {
+            float: left;
+            color: rgb(8, 8, 8);
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #0ab7e7;
+            color: rgb(3, 117, 239);
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            width: 250px;
+            margin: 10px;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .foot{
+            background-color: #000000;
+            text-align: center;
+            
+        }
+        .foot p{
+            color: #ffffff;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+
+    <div class="logo">
+        <img src="{% static 'img/college.jpg' %}" align="left">
+        <h1 >Mother Theresa E-commers store</h1>
+    </div>
+    <div class="navbar">
+        <div class="Search">
+        <form method="get">
+    <input type="text" name="q" placeholder="Search..." value="{{ request.GET.q }}">
+    <button type="submit">Search</button>
+    </form>
+    </div>
+
+    <a href="{% url 'product_list' %}">Home</a>
+
+    <a href="{% url 'login' %}">Login</a>
+    <a href="{% url 'view_cart' %}">cart</a>
+</div>
+
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+    <div class="foot">
+    <footer >
+        <p>Copyright &copy; 2022 Mother Theresa E-commerce store</p>
+        <p>Rakesh</p>
+        <p>derangirakesh@gmail.com</p>
+    </footer>
+    </div>
+</body>
+</html>
