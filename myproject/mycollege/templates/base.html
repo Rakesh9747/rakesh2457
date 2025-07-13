@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Moyher Theresa college Food items</title>
+    <style>
+        body { font-family: Arial, sans-serif;
+                background-color: orange;
+        }
+        .logo{
+            display: flex;
+            flex-direction: row;
+            justify-content: left;
+            
+            background-color: aqua;
+            width: 100%;
+
+        }
+        
+        .navbar {
+            background-color: #5aa5e6;
+            overflow: hidden;
+            padding: 10px;
+        }
+        .navbar a {
+            float: left;
+            color: rgb(1, 1, 1);
+            padding: 4px 10px;
+            text-decoration: none;
+            font-family: Georgia;
+        }
+        .navbar a:hover {
+            background-color: #0ab7e7;
+            color: rgb(73, 127, 235);
+        }
+        .content {
+            padding: 20px;
+        }
+        .card {
+            border: 1px solid #ccc;
+            padding: 15px;
+            border-radius: 10px;
+            width: 150px;
+            margin: 10px;
+        }
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo">
+        <img src="{% static 'img/college.jpg' %}" align="left" width= '100px' height= '100px'>
+        <h1 >Mother Theresa College</h1>
+    </div>
+    <div class="navbar">
+    <a href="{% url 'home' %}">Home</a>
+    <a href="{% url 'canteen' %}">Canteen</a>
+    <a href="{% url 'mess' %}">Mess</a>
+    <a href="{% url 'bakery' %}">Bakery</a>
+    <a href="{% url 'cart' %}" style="float:right;">🛒 </a>
+</div>
+
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>

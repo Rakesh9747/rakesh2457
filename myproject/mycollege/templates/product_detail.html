@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>{{ item.name }}</h2>
+
+{% if item.image %}
+  <img src="{{ item.image.url }}" alt="{{ item.name }}" width="200px" height="200px">
+{% endif %}
+
+<p><strong>Price:</strong> ₹{{ item.price }}</p>
+<p><strong>Description:</strong> {{ item.description }}</p>
+
+<a href="javascript:history.back()">← Back</a>
+{% endblock %}

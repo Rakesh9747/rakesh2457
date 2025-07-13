@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Mess Items</h1>
+<div style="display: flex; flex-wrap: wrap; gap: 20px;">
+  {% for item in items %}
+    <div style="border: 1px solid #ccc; padding: 15px; width: 250px; border-radius: 10px;">
+      {% if item.image %}
+        <img src="{{ item.image.url }}" alt="{{ item.name }}" width="100px" height="100px">
+      {% endif %}
+      <h3>{{ item.name }}</h3>
+      <p><strong>Price:</strong> ₹{{ item.price }}</p>
+      <p>{{ item.description }}</p>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}

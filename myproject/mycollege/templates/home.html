@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Welcome to College Food Ordering</h1>
+<p>Click below to view items from each category:</p>
+
+<ul>
+  <li><a href="{% url 'canteen' %}">View Canteen Items</a></li>
+  <li><a href="{% url 'mess' %}">View Mess Items</a></li>
+  <li><a href="{% url 'bakery' %}">View Bakery Items</a></li>
+</ul>
+{% endblock %}
