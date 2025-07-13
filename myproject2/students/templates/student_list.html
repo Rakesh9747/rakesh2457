@@ -1,0 +1,29 @@
+{% extends "master.html" %}
+{% block title %}Student List{% endblock %}
+
+{% block content %}
+<h1 align="center">Student List</h1>
+<table border="1" cellpadding="10" align="center" bgcolor="skyblue">
+    <tr>
+        <th>Name</th>
+        <th>Roll Number</th>
+        <th>Date of Birth</th>
+        <th>Actions</th>
+    </tr>
+    {% for student in students %}
+    <tr align="center">
+        <td>{{ student.name }}</td>
+        <td>{{ student.roll_number }}</td>
+        <td>{{ student.date_of_birth }}</td>
+        <td>
+            <a href="{% url 'student_update' student.id %}">Edit</a> |
+            <a href="{% url 'student_delete' student.id %}">Delete</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr><td colspan="5">No students found.</td></tr>
+    {% endfor %}
+</table>
+
+<a href="{% url 'student_create' %}" >Add New Student</a>
+{% endblock %}

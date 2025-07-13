@@ -1,0 +1,15 @@
+<!-- myapp/templates/employee_form.html -->
+{% extends "master.html" %}
+{% block title %}
+    {% if form.instance.pk %}Update{% else %}Create{% endif %} Employee
+{% endblock %}
+
+{% block content %}
+    <h1>{% if form.instance.pk %}Update{% else %}Create{% endif %} Employee</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
+    <a href="{% url 'employee_list' %}">Back to list</a>
+{% endblock %}
