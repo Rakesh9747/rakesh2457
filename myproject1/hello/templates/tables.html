@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function pt(){
+            var num=parseInt(document.getElementById("number").value);
+            var i=0;
+            for(i=1;i<=10;i++){
+                document.write(num+"*"+i+"="+num*i)
+                document.write("<br>")
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <p>enetr the number</p>
+    <input id="number">
+    <button onclick="pt()">print tabble</button>
+</body>
+</html>
