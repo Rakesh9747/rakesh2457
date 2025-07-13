@@ -1,0 +1,14 @@
+
+.navbar {
+    background: #333;
+    padding: 1rem;
+}
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}

@@ -1,0 +1,16 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}College Management{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    {% include 'includes/navbar.html' %}
+    
+    <div class="container">
+        {% block content %}{% endblock %}
+    </div>
+</body>
+</html>
