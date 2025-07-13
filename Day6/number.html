@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        var number1 = /^[0-9]{10}$/;
+        function number() {
+            var n = document.getElementById("numb").value;
+            if (number1.button(number)) {
+                alert("Number is valid");
+            }
+            else {
+                alert("Number is not ")
+            }
+            document.getElementById("number").innerHTML = number1;
+        }
+    
+
+
+    </script>
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="numb">
+    <button type="button" onclick="number()">click me</button>
+    <p id="number"></p>
+</body>
+
+</html>

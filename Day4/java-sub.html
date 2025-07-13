@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function add() 
+        {
+            var num1,num2,sum;
+            num1=parseInt(document.getElementById("texfirstNumber").value);
+            num2=parseInt(document.getElementById("texsecondNumber").value);
+            sum=num1+num2;
+            document.getElementById("texanswer").value=sum;
+        }
+         function sub() 
+        {
+            
+            num1=parseInt(document.getElementById("texfirstNumber").value);
+            num2=parseInt(document.getElementById("texsecondNumber").value);
+            sum=num1-num2;
+            document.getElementById("texanswer").value=sum;
+        }
+         function mul() 
+        {
+          
+            num1=parseInt(document.getElementById("texfirstNumber").value);
+            num2=parseInt(document.getElementById("texsecondNumber").value);
+            sum=num1*num2;
+            document.getElementById("texanswer").value=sum;
+        }
+         function die() 
+        {
+            
+            num1=parseInt(document.getElementById("texfirstNumber").value);
+            num2=parseInt(document.getElementById("texsecondNumber").value);
+            sum=num1/num2;
+            document.getElementById("texanswer").value=sum;
+        }
+          function pers() 
+        {
+            
+            num1=parseInt(document.getElementById("texfirstNumber").value);
+            num2=parseInt(document.getElementById("texsecondNumber").value);
+            sum=num1/num2*100;
+            document.getElementById("texanswer").value=sum;
+        }
+        function reset()
+        {
+            document.getElementById("texfirstNumber").value="";
+            document.getElementById("texsecondNumber").value="";
+            document.getElementById("texanswer").value="";
+        }
+    </script>
+    <title>add</title>
+</head>
+<body>
+    <P>first Number: <input id="texfirstNumber"></P>
+    <p>second Number: <input id="texsecondNumber"></p>
+    <button onclick="add()">add Them</button>
+    <button onclick="sub()">sub Them</button>
+    <button onclick="mul()">mulThem</button>
+    <button onclick="die()">div Them</button>
+    <button onclick="pers()">pres Them</button>
+
+    <button onclick="reset()">reset</button>
+    <p>sum= <input id="texanswer" inert="off"></p>
+
+    
+</body>
+</html>

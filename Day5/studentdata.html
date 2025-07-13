@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="studentjs.js"></script>
+    <title>student details</title>
+  </head>
+  <body>
+    <table border="1">
+      <tr>
+        <td>
+          <form onsubmit="event.preventDefault();onFormSubmit();">
+            <h2>Enter student details</h2>
+            <div>
+              <label for="faculityname"> student Name</label><br />
+              <input
+                type="text"
+                class="stuName"
+                id="stuName"
+                placeholder="Enter the student Name"
+              />
+            </div>
+            <div>
+              <label for="Department"> college name</label><br />
+              <input
+                type="text"
+                class="stucollege"
+                id="stucollege"
+                placeholder="Enter the college Department"
+              />
+            </div>
+            <div>
+              <label for="subject">cource name</label><br />
+              <input
+                type="text"
+                class="stucou"
+                id="stucou"
+                placeholder="Enter the cource name"
+              />
+            </div>
+           
+            <div>
+              <input type="submit" value="submit" />
+            </div>
+          </form>
+        </td>
+        <td>
+          <table
+            class="list"
+            id="faclist"
+            style="background-color: darkgoldenrod">
+            <thead>
+              <th> student Name</th>
+              <th>college name</th>
+              <th>course name</th>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>

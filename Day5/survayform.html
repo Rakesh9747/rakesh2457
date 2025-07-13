@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+    <scfunction show(){    
+        const x=document.forms["survay-form"];
+        let text="";
+        for(let i=0;i<x.length;i++){
+            text+=x.elements[i].value +' ';
+        }
+        alert(text);
+        document.getElementById("demo").innerHTML=text;
+    }
+    </script>
+    <style>
+        body {
+            background-color:rgb(10, 192, 22);
+            font-family: Verdana  ;
+            text-align: center;
+        }
+        form{
+            background-color: white;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 30px 40px;
+            box-shadow: 2px 5px 10px rgb(0, 0, 0);
+        }
+        .survey-form{
+            text-align: left;
+            margin-bottom: 25px;
+        }
+        .survey-form label{
+            display: block;
+            margin-bottom: 10px;
+        }
+        .survey-form input,
+        .survey-form select,
+        .survey-form textarea{
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .survey-form input[type="radio"]{
+        display: inline-block;
+        width: auto;;
+        }
+        .survey-form input[type="checkbox"]{
+            width:10px ;
+        }
+        button{
+            background-color: #08d220;
+            border: 1px solid #08d220;
+            border-radius: 2px;
+            font-family: initial;
+            font-size: 20px;
+            display: block;
+            width: 100%;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+        
+    </style> 
+    <title>survay form</title>
+</head>
+<body>
+    <h2>survey form</h2>
+    <form class="survey-form">
+    <div class="survay-form">
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="Enter Name" required ><br><br>
+            </div>
+            <div class="survay-form ">
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="Enter Email" required ><br><br>
+            </div>
+            <div class="survay-form ">
+            <label for="age">Age:</label>
+            <input type="age" name="age" id="age" placeholder="Enter age" required ><br><br>
+            </div>
+            <div class="survay-form ">
+            Gender:
+            <input type="radio" value="male" name="gender" id="male">male
+            <input type="radio" value="female" name="gender" id="female">female<br><br>
+            </div>
+            <div class="survay-form">
+            Select the group name:
+            <select name="dropdown" id="group">
+                <option value="select group" required="">select group</option>
+                <option value="mca">MCA</option>
+                <option value="mba">MBA</option>
+                <option value="btech">B.TECH</option>
+                <option value="inter">INTER</option>
+            </select><br><br>
+            </div>
+            <div class="survay-form1">
+            <label for="gender">Rate the traning:</label>
+            <input type="radio" value="male" name="gender" id="male">exclent
+            <input type="radio" value="female" name="gender" id="female">very good
+              <input type="radio" value="female" name="gender" id="female">Good
+                <input type="radio" value="female" name="gender" id="female">improve
+                  <input type="radio" value="female" name="gender" id="female">bad
+            <br><br>
+            </div>
+
+            <div claas="survay-form">
+            Feed back:
+            <textarea name="feedback" id="feedback" cols="30" rows="10"></textarea><br><br>
+            </div>
+            <button type="submit" value="submit" onclick="sub()"> Submit</button>
+            <button type="reset" value="reset">Reset</button>    
+    </form>
+</body>
+</html>

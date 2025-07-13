@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function large(){
+            var num=parseInt(document.getElementById("texnumber").value);
+            ld=0;
+            while(num>0){
+                rem=num % 10;
+                if (rem>ld)ld=rem;
+                num=Math.floor(num/10);
+            }
+            document.getElementById("ans").value=ld;
+        }
+        function small(){
+            var num=parseInt(document.getElementById("texnumber").value);
+            sm=9;
+            while(num>0){
+                rem=num % 10;
+                if (rem<sm)sm=rem;
+                num=Math.floor(num/10);
+
+            }
+            document.getElementById("ans").value=sm;
+        }
+        function sum(){
+            var num=parseInt(document.getElementById("texnumber").value);
+            let totalSum = 0;
+            while(num > 0){
+                rem = num % 10;
+                totalSum += rem;
+                num = Math.floor(num / 10);
+            }
+            document.getElementById("ans").value = totalSum;
+        }
+        function reverse(){
+            var num = parseInt(document.getElementById("texnumber").value);
+            let reversedNum = 0;
+            while(num > 0){
+                let rem = num % 10;
+                reversedNum = reversedNum * 10 + rem;
+                num = Math.floor(num / 10);
+            }
+            document.getElementById("ans").value = reversedNum;
+        }
+    </script>
+</head>
+<body>
+    <p>Enter a number: <input id="texnumber"></p>
+    <button onclick="sum()">sum</button>
+    <button onclick="large()">large</button>
+    <button onclick="small()">small</button>
+    <button onclick="reverse()">revese</button>
+    <p>answer: <input id="ans" inert="off"></p>
+
+</body>
+</html>

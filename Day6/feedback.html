@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <style>
+        body {
+            background-color: greenyellow;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+
+        }
+        form{
+            background-color: white;
+            max-width: 700px;
+            margin: 50px auto;
+            padding: 30px 40px;
+            box-shadow: 2px 5px 10px rgba(0,0,0,0.2);
+        }
+        .feedback{
+            text-align: left;
+            margin-bottom: 30px;
+
+        }
+        .feedback label{
+            display: block;
+            margin-bottom: 27px;
+        }
+        .feedback input,
+        .feedback select,
+        .feedback textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1 solid #ccc;
+            border: 5px;
+
+        }
+        .feedback  [type="radio"]{
+            text-align: center;
+            display: block;
+            width: 50px;
+
+        }
+        .feedback input[type="checkbox"]{
+           width: 100px;
+        }
+        .btm{
+            background-color: rgb(93, 147, 13);
+            border: 10px greenyellow;
+            border-radius: 19px;
+            font-family: initial;
+            font-size: 20px;
+            display: block;
+            width: 100%;
+            margin: 50px;
+            margin-bottom: 20px;
+        }
+
+
+    </style>
+    
+    <title>feed back form</title>
+</head>
+<body>
+         <h1>feed back form</h1>
+    <form class="userForm" >
+        <div class="feedback">
+        <label for="name" >Name:  </label>
+            <input type="text" id="name" placeholder="Enter name" required>
+       </div>
+
+       <div class="feedback">
+            training Attended: <br><br>
+            <select name="train" id="train"><br><br>
+                <option value="Select group" id="train">--select training--</option>
+                <option value="java" id="train">java</option>
+                <option value="css" id="train">css</option>
+                <option value="python" id="train">python</option>
+                <option value="dijanjo" id="train"></option>
+            </select><br><br>
+            </div>
+            <div class="feedback">
+                Overall rating: 
+                <input type="radio" name="rating" id="Excellent">Excellent 
+                <input type="radio" name="rating" id="Good">Good 
+                <input type="radio"  name="rating" id="Average">Average 
+                <input type="radio"  name="rating" id ="Poor">poor<br><br>
+            </div>
+            <div class="feedback">
+            Topic coverd: <br><br>
+            <input type="checkbox" name="topic" >Content Quality
+            <input type="checkbox" name="topic" >Delivert <br>
+            <input type="checkbox" name="topic" >interaction
+            <input type="checkbox" name="topic" >Relavance
+        </label><br><br>
+        </div>
+        <div class="feedback">
+ 
+            Suggestions/Comments :
+           <textarea name="feedback" id="feedback" cols="30" rows="10"></textarea><br>
+           </div>
+           <div>
+            <form class="userForm" onsubmit="showData(event)">
+  ...
+  <button class="btm" type="submit">submit feedback</button>
+</form>
+
+<script>
+function showData(event){
+    event.preventDefault(); // Prevent form from submitting
+
+    let name = document.getElementById("name").value;
+    let train = document.getElementById("train").value;
+    let rating = document.querySelector('input[name="rating"]:checked')?.id || "No rating";
+    let topics = Array.from(document.querySelectorAll('input[name="topic"]:checked'))
+                      .map(el => el.parentNode.textContent.trim())
+                      .join(", ");
+    let feedback = document.getElementById("feedback").value;
+
+    alert(`Thank you for your feedback\nName: ${name}\nTraining: ${train}\nRating: ${rating}\nTopics: ${topics}\nFeedback: ${feedback}`);
+}
+</script>
+
+</body>
+</html>

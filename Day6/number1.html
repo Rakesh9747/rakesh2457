@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <script>
+    function validate(){
+    
+        let X=document.getElementById("numb").value;
+        let text;
+        if(isNaN(X) || X < 100000000000 || X > 9999999999)
+        {
+            text="not valid";
+        }
+        else
+        {
+            text="valid";
+        }
+     document.getElementById("demo").innerHTML=text;
+    }
+    </script>
+    
+</head>
+<body>
+    <h1>javascript validation</h1>
+    <p>plese eneterthe number 1 to 10:</p>
+    <input id="numb">
+    <button type="button" onclick="validate()">submit</button>
+    <p id="demo"></p>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script>
+        var depertmentnames = {
+            "MCA": {
+                "SEM-1": ["OS", "DBMS", "C++"],
+                "sem-2":["java","ADBMS","COOR"],
+                "sem-3":["WT","E_COMM","PHP"]
+            },
+            "MBA": {
+                "SEM-1": ["OS", "DBMS", "C++"],
+                "SEM-2":["ED","HP"],
+                "SEM-3":["JD","MP"]
+            }
+
+        }
+        window.onload = function () {
+            var depertmentsele = document.getElementById("subject");
+            var semsemistersele = document.getElementById("topic");
+            var subjectssele = document.getElementById("chapter");
+            for (var i in depertmentnames) {
+                depertmentsele.options[depertmentsele.options.length] = new Option(i, i);
+            }
+            depertmentsele.onchange = function () {
+                subjectssele.length = 1;
+                semsemistersele.length = 1;
+                for (var j in depertmentnames[this.value]) {
+                    semsemistersele.options[semsemistersele.options.length] = new Option(j, j);
+                }
+            }
+
+        
+        semsemistersele.onchange = function () {
+            subjectssele.length = 1;
+            var Z = depertmentnames[depertmentsele.value][this.value]
+            for (var j=0; j<Z.length;j++) {
+                subjectssele.options[subjectssele.options.length] = new Option(Z[j], Z[j])
+            }
+        }
+    }
+    </script>
+
+</head>
+
+<body>
+
+    <form name="form1" id="form1">
+        depertment:<select name="subject" id="subject">
+            <option value="" selected="selected">Select subject</option>
+        </select>
+        <br><br>
+        semsemister:<select name="topic" id="topic">
+            <option value="" selected="selected">Please select subject first</option>
+        </select>
+        <br><br>
+        Chapters: <select name="chapter" id="chapter">
+            <option value="" selected="selected">Please select topic first</option>
+        </select>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>
