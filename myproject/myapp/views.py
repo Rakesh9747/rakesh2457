@@ -1,12 +1,26 @@
 from django.shortcuts import render
+
+# Create your views here.
 from django.http import HttpResponse
-from django.template import loader
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 def home(request):
-    stu=[{'name':'shiva','marks':90},{'name':'navmohan','marks':85},
-         {'name':'shravani','marks':88},{'name':'salma','marks':91}]
-    return render(request,'green.html',{'data': stu})
+    return render(request, 'home.html')
 
-##def displaygreen(request):
-##    stu=['shiva','navmohan','shravani','salma']
-##   return render(request,'green.html',{'data': stu})
+
+def generate_pdf(request):
+    template = get_template('pdf_template.html')
+    html = template.render({'title': 'My PDF', 'message': 'Hello from Django PDF'})
+    
+    response = HttpResponse(content_type='application/pdf')
+    response['Content-Disposition'] = 'inline; filename="report.pdf"'
+
+    pisa_status = pisa.CreatePDF(html, dest=response)
+    
+    if pisa_status.err:
+        return HttpResponse('We had some errors <pre>' + html + '</pre>')
+    return response
+
+def home(request):
+    return render(request, 'home.html')
