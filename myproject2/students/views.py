@@ -3,6 +3,17 @@ from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.views.generic import ListView
 from django.urls import reverse_lazy
 from .models import Student
+from django.http import HttpResponse
+from django.template import loader
+from .models import Member
+
+def testing(request):
+  mydata = Member.objects.all()
+  template = loader.get_template('template.html')
+  context = {
+    'students': mydata,
+  }
+  return HttpResponse(template.render(context, request))
 
 class StudentCreateView(CreateView):
     model = Student
