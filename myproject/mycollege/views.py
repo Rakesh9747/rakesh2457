@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
 from .models import CanteenItem, MessItem, BakeryItem
 
 def home_view(request):
@@ -16,10 +16,3 @@ def mess_view(request):
 def bakery_view(request):
     items = BakeryItem.objects.all()
     return render(request, 'bakery_list.html', {'items': items})
-def cart_view(request):
-    items = BakeryItem.objects.all()
-    return render(request, 'cart.html', {'items': items})
-
-def product_detail(request, pk):
-    item = get_object_or_404(Item, pk=pk)
-    return render(request, 'product_detail.html', {'item': item})

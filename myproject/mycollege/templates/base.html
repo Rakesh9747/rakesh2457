@@ -11,27 +11,29 @@
             display: flex;
             flex-direction: row;
             justify-content: left;
-            
-            background-color: aqua;
-            width: 100%;
-
+            gap: 15px;
+            padding: 10px;
+        }
+        .logo img{
+            align-items: flex-start;
+            width: 100px;
+            height: 100px;
         }
         
         .navbar {
-            background-color: #5aa5e6;
+            background-color: #08b1ee;
             overflow: hidden;
             padding: 10px;
         }
         .navbar a {
             float: left;
-            color: rgb(1, 1, 1);
-            padding: 4px 10px;
+            color: rgb(8, 8, 8);
+            padding: 14px 20px;
             text-decoration: none;
-            font-family: Georgia;
         }
         .navbar a:hover {
             background-color: #0ab7e7;
-            color: rgb(73, 127, 235);
+            color: rgb(3, 117, 239);
         }
         .content {
             padding: 20px;
@@ -40,7 +42,7 @@
             border: 1px solid #ccc;
             padding: 15px;
             border-radius: 10px;
-            width: 150px;
+            width: 250px;
             margin: 10px;
         }
         .card img {
@@ -56,7 +58,7 @@
 </head>
 <body>
     <div class="logo">
-        <img src="{% static 'img/college.jpg' %}" align="left" width= '100px' height= '100px'>
+        <img src="{% static 'img/college.jpg' %}" align="left">
         <h1 >Mother Theresa College</h1>
     </div>
     <div class="navbar">
@@ -64,7 +66,6 @@
     <a href="{% url 'canteen' %}">Canteen</a>
     <a href="{% url 'mess' %}">Mess</a>
     <a href="{% url 'bakery' %}">Bakery</a>
-    <a href="{% url 'cart' %}" style="float:right;">🛒 </a>
 </div>
 
 

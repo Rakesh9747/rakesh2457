@@ -6,7 +6,7 @@
   {% for item in items %}
     <div style="border: 1px solid #ccc; padding: 15px; width: 250px; border-radius: 10px;">
       {% if item.image %}
-        <img src="{{ item.image.url }}" alt="{{ item.name }}" width="100px" height="100px">
+        <img src="{{ item.image.url }}" alt="{{ item.name }}"">
       {% endif %}
       <h3>{{ item.name }}</h3>
       <p><strong>Price:</strong> ₹{{ item.price }}</p>
