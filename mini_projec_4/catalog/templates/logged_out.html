@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div style="text-align: center; margin-top: 50px;">
+    <h2>You have been successfully logged out.</h2>
+    <p>Thank you for visiting our store.</p>
+    <div style="margin-top: 20px;">
+        <a href="{% url 'login' %}" class="btn btn-primary">Login Again</a>
+    </div>
+</div>
+{% endblock %}

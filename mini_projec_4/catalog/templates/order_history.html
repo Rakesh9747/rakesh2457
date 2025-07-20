@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Your Orders</h2>
+{% for CartItem in orders %}
+    <div style="margin-bottom: 40px;">
+        <h3>Order #{{ order.id }} — {{ order.created_at }}</h3>
+
+        <table border="1" cellpadding="10" cellspacing="0" width="100%" style="border-collapse: collapse;">
+            <thead style="background-color: #f2f2f2;">
+                <tr>
+                    <th>S.No</th>
+                    <th>Product Name</th>
+                    <th>Price (Rs)</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in CartItem.products.all %}
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.price }}</td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="3">No products in this order.</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% empty %}
+    <p>No orders found.</p>
+{% endfor %}
+
+<a href="{% url 'product_list' %}">← Back to Products</a>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Catalog</title>
+    <style>
+        .categories {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body bgcolor="skyblue">
+<h3>Chose the  Category:</h3>
+<ul class="categories">
+    {% for category in categories %}
+        <li style="margin: 10px;">
+            <a href="?category={{ category.id }}">
+                {% if category.image %}
+                    <img src="{{ category.image.url }}" alt="{{ category.name }}" width="80" height="80"><br>
+                {% endif %}
+                {{ category.name }}
+            </a>
+        </li>
+    {% endfor %}
+</ul>
+
+
+{% for product in products %}
+    <div class="product">
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}" width="100px" height="100px">
+        {% endif %}
+        <h2><a href="{% url 'product_detail' product.pk %}">{{ product.name }}</a></h2>
+        <p>Rs {{ product.price }}</p>
+    </div>
+    
+{% endfor %}
+</body>
+</html>
+
+{% endblock %}
